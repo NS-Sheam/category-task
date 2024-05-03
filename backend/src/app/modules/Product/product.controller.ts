@@ -17,6 +17,22 @@ const addProduct = async (req: Request, res: Response) => {
   }
 };
 
+const getProductById = async (req: Request, res: Response) => {
+  try {
+    const result = await ProductService.getProductByIdFromDB(req.params.id);
+    res.status(200).json({
+      success: true,
+      message: "Product fetched successfully",
+      data: result,
+    });
+  } catch (error: any) {
+    res.status(500).json({
+      success: false,
+      message: error?.message,
+    });
+  }
+};
+
 const getAllProducts = async (req: Request, res: Response) => {
   try {
     const result = await ProductService.getAllProductsFromDB();
@@ -52,5 +68,6 @@ const getProductByCategory = async (req: Request, res: Response) => {
 export const ProductController = {
   addProduct,
   getAllProducts,
+  getProductById,
   getProductByCategory,
 };

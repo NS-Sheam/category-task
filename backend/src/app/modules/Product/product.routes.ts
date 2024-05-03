@@ -17,6 +17,8 @@ router.post(
 );
 
 router.get("/all", ProductController.getAllProducts);
+router.get("/:id", ProductController.getProductById);
+
 router.get("/category/:category", ProductController.getProductByCategory);
 
 export const ProductRoutes = router;

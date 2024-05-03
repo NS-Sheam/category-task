@@ -26,6 +26,11 @@ const getAllProductsFromDB = async () => {
   return result;
 };
 
+const getProductByIdFromDB = async (id: string) => {
+  const result = await Product.findById(id).populate("category");
+  return result;
+};
+
 const getProductByCategoryFromDB = async (category: string) => {
   const result = await Product.find({ category: category }).populate("category");
   return result;
@@ -34,5 +39,6 @@ const getProductByCategoryFromDB = async (category: string) => {
 export const ProductService = {
   addProductIntoDB,
   getAllProductsFromDB,
+  getProductByIdFromDB,
   getProductByCategoryFromDB,
 };
