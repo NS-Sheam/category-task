@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const PORT = 5000;
+const PORT = process.env.PORT as string;
 
 async function server() {
   try {
