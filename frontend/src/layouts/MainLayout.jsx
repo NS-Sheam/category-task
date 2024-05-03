@@ -32,7 +32,7 @@ const MainLayout = () => {
     ];
 
     return (
-        <div className="grid grid-cols-5 gap-2">
+        <div className="grid grid-cols-5 gap-2 container mx-auto">
             {/* menu section  */}
             <div className="col-span-1 bg-slate-300 h-full">
                 <ul className="text-2xl p-4 font-semibold">
